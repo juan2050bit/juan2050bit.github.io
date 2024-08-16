@@ -1,0 +1,718 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aplicación</title>
+  <link rel="stylesheet" href="styles.css">
+    <style>
+         .hidden { display: none; }
+        .container { margin: 20px; }
+        button { margin: 5px; }
+      
+    </style>
+</head>
+<body>
+       <div class="form-container">
+        <div class="login-container" id="loginSection">
+            <h2>Iniciar Sesión</h2>
+            <form id="loginForm">
+                <div class="form-group">
+                    <label for="loginUsername">Nombre de usuario:</label>
+                    <input type="text" id="loginUsername" name="username" required>
+                </div>
+                <div class="form-group">
+                    <label for="loginPassword">Contraseña:</label>
+                    <input type="password" id="loginPassword" name="password" required>
+                </div>
+                <button type="submit">Iniciar Sesión</button>
+                <p id="loginErrorMessage"></p>
+            </form>
+            <p class="toggle-link" id="showRegister">¿No tienes una cuenta? Regístrate aquí</p>
+        </div>
+
+        <div class="register-container" id="registerSection" style="display: none;">
+            <h2>Registro</h2>
+            <form id="registerForm">
+                <div class="form-group">
+                    <label for="registerName">Nombre:</label>
+                    <input type="text" id="registerName" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="registerUsername">Nombre de usuario:</label>
+                    <input type="text" id="registerUsername" name="username" required>
+                </div>
+                <div class="form-group">
+                    <label for="registerPassword">Contraseña:</label>
+                    <input type="password" id="registerPassword" name="password" required>
+                </div>
+                <button type="submit">Registrar</button>
+                <p id="registerErrorMessage"></p>
+            </form>
+            <p class="toggle-link" id="showLogin">¿Ya tienes una cuenta? Inicia sesión aquí</p>
+        </div>
+  </div>
+     <!-- Dashboard -->
+    <div id="dashboard" class="container hidden">
+        <h1>Bienvenido al Dashboard</h1>
+        <button id="grade6Button">Grado 6º</button>
+        <button id="grade7Button">Grado 7º</button>
+        <button id="grade8Button">Grado 8º</button>
+        <button id="grade9Button">Grado 9º</button>
+        <button id="grade10Button">Grado 10º</button>
+        <button id="grade11Button">Grado 11º</button>
+        <button id="logoutButton">Cerrar sesión</button> 
+     </div>
+    <!-- Opciones de Grado 6º -->
+    <div id="grade6Options" class="hidden">
+        <button id="container1Button">Contenedor 1</button>
+        <button id="container2Button">Contenedor 2</button>
+        <button id="container3Button">Contenedor 3</button>
+        <button id="container4Button">Contenedor 4</button>
+        <button id="container5Button">Contenedor 5</button>
+        <button id="backToDashboardFromGrade6">Regresar al Dashboard</button>
+    </div>
+
+    <!-- Contenedores de Grado 6º -->
+    <div id="container1" class="hidden">
+        <h3>Contenedor 1</h3>
+        <button id="backToGrade6OptionsFromContainer1">Regresar a las opciones de Grado 6º</button>
+    </div>
+
+    <div id="container2" class="hidden">
+        <h3>Contenedor 2</h3>
+        <button id="backToGrade6OptionsFromContainer2">Regresar a las opciones de Grado 6º</button>
+    </div>
+
+    <div id="container3" class="hidden">
+        <h3>Contenedor 3</h3>
+        <button id="backToGrade6OptionsFromContainer3">Regresar a las opciones de Grado 6º</button>
+    </div>
+
+    <div id="container4" class="hidden">
+        <h3>Contenedor 4</h3>
+        <button id="backToGrade6OptionsFromContainer4">Regresar a las opciones de Grado 6º</button>
+    </div>
+
+    <div id="container5" class="hidden">
+        <h3>Contenedor 5</h3>
+        <button id="backToGrade6OptionsFromContainer5">Regresar a las opciones de Grado 6º</button>
+    </div>
+
+    <!-- Opciones de Grado 7º -->
+    <div id="grade7Options" class="hidden">
+        <button id="container6Button">Números Enteros y Racionales</button>
+        <button id="container7Button">Operaciones con Fracciones y Decimales</button>
+        <button id="container8Button">Geometría Básica</button>
+        <button id="container9Button">Introducción a la Estadística</button>
+        <button id="container10Button">Introducción a la Probabilidad</button>
+        <button id="backToDashboardFromGrade7">Regresar al Dashboard</button>
+    </div>
+
+    <!-- Contenedores de Grado 7º -->
+    <div id="container6" class="hidden">
+        <h3>Números Enteros y Racionales</h3>
+        <button id="backToGrade7OptionsFromContainer6">Regresar a las opciones de Grado 7º</button>
+    </div>
+
+    <div id="container7" class="hidden">
+        <h3>Operaciones con Fracciones y Decimales</h3>
+        <button id="backToGrade7OptionsFromContainer7">Regresar a las opciones de Grado 7º</button>
+    </div>
+
+    <div id="container8" class="hidden">
+        <h3>Geometría Básica</h3>
+        <button id="backToGrade7OptionsFromContainer8">Regresar a las opciones de Grado 7º</button>
+    </div>
+
+    <div id="container9" class="hidden">
+        <h3>Introducción a la Estadística</h3>
+        <button id="backToGrade7OptionsFromContainer9">Regresar a las opciones de Grado 7º</button>
+    </div>
+
+    <div id="container10" class="hidden">
+        <h3>Introducción a la Probabilidad</h3>
+        <button id="backToGrade7OptionsFromContainer10">Regresar a las opciones de Grado 7º</button>
+    </div>
+
+    <!-- Opciones de Grado 8º -->
+    <div id="grade8Options" class="hidden">
+        <button id="container11Button">Contenedor 11</button>
+        <button id="container12Button">Contenedor 12</button>
+        <button id="container13Button">Contenedor 13</button>
+        <button id="container14Button">Contenedor 14</button>
+        <button id="container15Button">Contenedor 15</button>
+        <button id="backToDashboardFromGrade8">Regresar al Dashboard</button>
+    </div>
+
+    <!-- Contenedores de Grado 8º -->
+    <div id="container11" class="hidden">
+        <h3>Contenedor 11</h3>
+        <button id="backToGrade8OptionsFromContainer11">Regresar a las opciones de Grado 8º</button>
+    </div>
+
+    <div id="container12" class="hidden">
+        <h3>Contenedor 12</h3>
+        <button id="backToGrade8OptionsFromContainer12">Regresar a las opciones de Grado 8º</button>
+    </div>
+
+    <div id="container13" class="hidden">
+        <h3>Contenedor 13</h3>
+        <button id="backToGrade8OptionsFromContainer13">Regresar a las opciones de Grado 8º</button>
+    </div>
+
+    <div id="container14" class="hidden">
+        <h3>Contenedor 14</h3>
+        <button id="backToGrade8OptionsFromContainer14">Regresar a las opciones de Grado 8º</button>
+    </div>
+
+    <div id="container15" class="hidden">
+        <h3>Contenedor 15</h3>
+        <button id="backToGrade8OptionsFromContainer15">Regresar a las opciones de Grado 8º</button>
+    </div>
+
+    <!-- Opciones de Grado 9º -->
+    <div id="grade9Options" class="hidden">
+        <button id="container16Button">Contenedor 16</button>
+        <button id="container17Button">Contenedor 17</button>
+        <button id="container18Button">Contenedor 18</button>
+        <button id="container19Button">Contenedor 19</button>
+        <button id="container20Button">Contenedor 20</button>
+        <button id="backToDashboardFromGrade9">Regresar al Dashboard</button>
+    </div>
+
+    <!-- Contenedores de Grado 9º -->
+    <div id="container16" class="hidden">
+        <h3>Contenedor 16</h3>
+        <button id="backToGrade9OptionsFromContainer16">Regresar a las opciones de Grado 9º</button>
+    </div>
+
+    <div id="container17" class="hidden">
+        <h3>Contenedor 17</h3>
+        <button id="backToGrade9OptionsFromContainer17">Regresar a las opciones de Grado 9º</button>
+    </div>
+
+    <div id="container18" class="hidden">
+        <h3>Contenedor 18</h3>
+        <button id="backToGrade9OptionsFromContainer18">Regresar a las opciones de Grado 9º</button>
+    </div>
+
+    <div id="container19" class="hidden">
+        <h3>Contenedor 19</h3>
+        <button id="backToGrade9OptionsFromContainer19">Regresar a las opciones de Grado 9º</button>
+    </div>
+
+    <div id="container20" class="hidden">
+        <h3>Contenedor 20</h3>
+        <button id="backToGrade9OptionsFromContainer20">Regresar a las opciones de Grado 9º</button>
+    </div>
+
+    <!-- Opciones de Grado 10º -->
+    <div id="grade10Options" class="hidden">
+        <button id="container21Button">Contenedor 21</button>
+        <button id="container22Button">Contenedor 22</button>
+        <button id="container23Button">Contenedor 23</button>
+        <button id="container24Button">Contenedor 24</button>
+        <button id="container25Button">Contenedor 25</button>
+        <button id="backToDashboardFromGrade10">Regresar al Dashboard</button>
+    </div>
+
+    <!-- Contenedores de Grado 10º -->
+    <div id="container21" class="hidden">
+        <h3>Contenedor 21</h3>
+        <button id="backToGrade10OptionsFromContainer21">Regresar a las opciones de Grado 10º</button>
+    </div>
+
+    <div id="container22" class="hidden">
+        <h3>Contenedor 22</h3>
+        <button id="backToGrade10OptionsFromContainer22">Regresar a las opciones de Grado 10º</button>
+    </div>
+
+    <div id="container23" class="hidden">
+        <h3>Contenedor 23</h3>
+        <button id="backToGrade10OptionsFromContainer23">Regresar a las opciones de Grado 10º</button>
+    </div>
+
+    <div id="container24" class="hidden">
+        <h3>Contenedor 24</h3>
+        <button id="backToGrade10OptionsFromContainer24">Regresar a las opciones de Grado 10º</button>
+    </div>
+
+    <div id="container25" class="hidden">
+        <h3>Contenedor 25</h3>
+        <button id="backToGrade10OptionsFromContainer25">Regresar a las opciones de Grado 10º</button>
+    </div>
+
+    <!-- Opciones de Grado 11º -->
+    <div id="grade11Options" class="hidden">
+        <button id="container26Button">Contenedor 26</button>
+        <button id="container27Button">Contenedor 27</button>
+        <button id="container28Button">Contenedor 28</button>
+        <button id="container29Button">Contenedor 29</button>
+        <button id="container30Button">Contenedor 30</button>
+        <button id="backToDashboardFromGrade11">Regresar al Dashboard</button>
+    </div>
+
+    <!-- Contenedores de Grado 11º -->
+    <div id="container26" class="hidden">
+        <h3>Contenedor 26</h3>
+        <button id="backToGrade11OptionsFromContainer26">Regresar a las opciones de Grado 11º</button>
+    </div>
+
+    <div id="container27" class="hidden">
+        <h3>Contenedor 27</h3>
+        <button id="backToGrade11OptionsFromContainer27">Regresar a las opciones de Grado 11º</button>
+    </div>
+
+    <div id="container28" class="hidden">
+        <h3>Contenedor 28</h3>
+        <button id="backToGrade11OptionsFromContainer28">Regresar a las opciones de Grado 11º</button>
+    </div>
+
+    <div id="container29" class="hidden">
+        <h3>Contenedor 29</h3>
+        <button id="backToGrade11OptionsFromContainer29">Regresar a las opciones de Grado 11º</button>
+    </div>
+
+    <div id="container30" class="hidden">
+        <h3>Contenedor 30</h3>
+        <button id="backToGrade11OptionsFromContainer30">Regresar a las opciones de Grado 11º</button>
+    </div>
+
+    <script>
+       // Función para mostrar el dashboard
+        function showDashboard() {
+            document.querySelector('.form-container').style.display = 'none';
+            document.getElementById('dashboard').style.display = 'block';
+        }
+        // Navegación entre login y registro
+         document.getElementById('loginForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const username = document.getElementById('loginUsername').value;
+            const password = document.getElementById('loginPassword').value;
+
+            // Verificar las credenciales
+            const users = JSON.parse(localStorage.getItem('users')) || [];
+            const user = users.find(user => user.username === username && user.password === password);
+
+            if (user) {
+                showDashboard();
+                document.getElementById('loginErrorMessage').textContent = '';
+            } else {
+                document.getElementById('loginErrorMessage').textContent = 'Nombre de usuario o contraseña incorrectos.';
+            }
+        });
+
+        // Manejo del registro
+        document.getElementById('registerForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const name = document.getElementById('registerName').value;
+            const username = document.getElementById('registerUsername').value;
+            const password = document.getElementById('registerPassword').value;
+
+            // Validación simple
+            if (name === '' || username === '' || password === '') {
+                document.getElementById('registerErrorMessage').textContent = 'Por favor, complete todos los campos.';
+                return;
+            }
+
+            // Guardar el usuario en el localStorage
+            const users = JSON.parse(localStorage.getItem('users')) || [];
+            if (users.some(user => user.username === username)) {
+                document.getElementById('registerErrorMessage').textContent = 'El nombre de usuario ya está en uso.';
+                return;
+            }
+
+            users.push({ name, username, password });
+            localStorage.setItem('users', JSON.stringify(users));
+            showDashboard();
+            document.getElementById('registerErrorMessage').textContent = '';
+        });
+
+        // Alternar entre inicio de sesión y registro
+        document.getElementById('showRegister').addEventListener('click', function() {
+            document.getElementById('loginSection').style.display = 'none';
+            document.getElementById('registerSection').style.display = 'block';
+        });
+
+        document.getElementById('showLogin').addEventListener('click', function() {
+            document.getElementById('registerSection').style.display = 'none';
+            document.getElementById('loginSection').style.display = 'block';
+        });
+
+        // Navegación desde el dashboard a las opciones de cada grado
+        document.getElementById('grade6Button').addEventListener('click', function() {
+            document.getElementById('dashboard').classList.add('hidden');
+            document.getElementById('grade6Options').classList.remove('hidden');
+        });
+
+        document.getElementById('grade7Button').addEventListener('click', function() {
+            document.getElementById('dashboard').classList.add('hidden');
+            document.getElementById('grade7Options').classList.remove('hidden');
+        });
+
+        document.getElementById('grade8Button').addEventListener('click', function() {
+            document.getElementById('dashboard').classList.add('hidden');
+            document.getElementById('grade8Options').classList.remove('hidden');
+        });
+
+        document.getElementById('grade9Button').addEventListener('click', function() {
+            document.getElementById('dashboard').classList.add('hidden');
+            document.getElementById('grade9Options').classList.remove('hidden');
+        });
+
+        document.getElementById('grade10Button').addEventListener('click', function() {
+            document.getElementById('dashboard').classList.add('hidden');
+            document.getElementById('grade10Options').classList.remove('hidden');
+        });
+
+        document.getElementById('grade11Button').addEventListener('click', function() {
+            document.getElementById('dashboard').classList.add('hidden');
+            document.getElementById('grade11Options').classList.remove('hidden');
+        });
+
+        document.getElementById('logoutButton').addEventListener('click', function() {
+            document.getElementById('dashboard').classList.add('hidden');
+            document.getElementById('loginContainer').classList.remove('hidden');
+        });
+
+        // Volver al dashboard desde las opciones de grados
+        document.getElementById('backToDashboardFromGrade6').addEventListener('click', function() {
+            document.getElementById('grade6Options').classList.add('hidden');
+            document.getElementById('dashboard').classList.remove('hidden');
+        });
+
+        document.getElementById('backToDashboardFromGrade7').addEventListener('click', function() {
+            document.getElementById('grade7Options').classList.add('hidden');
+            document.getElementById('dashboard').classList.remove('hidden');
+        });
+
+        document.getElementById('backToDashboardFromGrade8').addEventListener('click', function() {
+            document.getElementById('grade8Options').classList.add('hidden');
+            document.getElementById('dashboard').classList.remove('hidden');
+        });
+
+        document.getElementById('backToDashboardFromGrade9').addEventListener('click', function() {
+            document.getElementById('grade9Options').classList.add('hidden');
+            document.getElementById('dashboard').classList.remove('hidden');
+        });
+
+        document.getElementById('backToDashboardFromGrade10').addEventListener('click', function() {
+            document.getElementById('grade10Options').classList.add('hidden');
+            document.getElementById('dashboard').classList.remove('hidden');
+        });
+
+        document.getElementById('backToDashboardFromGrade11').addEventListener('click', function() {
+            document.getElementById('grade11Options').classList.add('hidden');
+            document.getElementById('dashboard').classList.remove('hidden');
+        });
+
+        // Navegación a contenedores desde las opciones de Grado 6º
+        document.getElementById('container1Button').addEventListener('click', function() {
+            document.getElementById('grade6Options').classList.add('hidden');
+            document.getElementById('container1').classList.remove('hidden');
+        });
+
+        document.getElementById('container2Button').addEventListener('click', function() {
+            document.getElementById('grade6Options').classList.add('hidden');
+            document.getElementById('container2').classList.remove('hidden');
+        });
+
+        document.getElementById('container3Button').addEventListener('click', function() {
+            document.getElementById('grade6Options').classList.add('hidden');
+            document.getElementById('container3').classList.remove('hidden');
+        });
+
+        document.getElementById('container4Button').addEventListener('click', function() {
+            document.getElementById('grade6Options').classList.add('hidden');
+            document.getElementById('container4').classList.remove('hidden');
+        });
+
+        document.getElementById('container5Button').addEventListener('click', function() {
+            document.getElementById('grade6Options').classList.add('hidden');
+            document.getElementById('container5').classList.remove('hidden');
+        });
+
+        // Navegación a contenedores desde las opciones de Grado 7º
+        document.getElementById('container6Button').addEventListener('click', function() {
+            document.getElementById('grade7Options').classList.add('hidden');
+            document.getElementById('container6').classList.remove('hidden');
+        });
+
+        document.getElementById('container7Button').addEventListener('click', function() {
+            document.getElementById('grade7Options').classList.add('hidden');
+            document.getElementById('container7').classList.remove('hidden');
+        });
+
+        document.getElementById('container8Button').addEventListener('click', function() {
+            document.getElementById('grade7Options').classList.add('hidden');
+            document.getElementById('container8').classList.remove('hidden');
+        });
+
+        document.getElementById('container9Button').addEventListener('click', function() {
+            document.getElementById('grade7Options').classList.add('hidden');
+            document.getElementById('container9').classList.remove('hidden');
+        });
+
+        document.getElementById('container10Button').addEventListener('click', function() {
+            document.getElementById('grade7Options').classList.add('hidden');
+            document.getElementById('container10').classList.remove('hidden');
+        });
+
+        // Navegación a contenedores desde las opciones de Grado 8º
+        document.getElementById('container11Button').addEventListener('click', function() {
+            document.getElementById('grade8Options').classList.add('hidden');
+            document.getElementById('container11').classList.remove('hidden');
+        });
+
+        document.getElementById('container12Button').addEventListener('click', function() {
+            document.getElementById('grade8Options').classList.add('hidden');
+            document.getElementById('container12').classList.remove('hidden');
+        });
+
+        document.getElementById('container13Button').addEventListener('click', function() {
+            document.getElementById('grade8Options').classList.add('hidden');
+            document.getElementById('container13').classList.remove('hidden');
+        });
+
+        document.getElementById('container14Button').addEventListener('click', function() {
+            document.getElementById('grade8Options').classList.add('hidden');
+            document.getElementById('container14').classList.remove('hidden');
+        });
+
+        document.getElementById('container15Button').addEventListener('click', function() {
+            document.getElementById('grade8Options').classList.add('hidden');
+            document.getElementById('container15').classList.remove('hidden');
+        });
+
+        // Navegación a contenedores desde las opciones de Grado 9º
+        document.getElementById('container16Button').addEventListener('click', function() {
+            document.getElementById('grade9Options').classList.add('hidden');
+            document.getElementById('container16').classList.remove('hidden');
+        });
+
+        document.getElementById('container17Button').addEventListener('click', function() {
+            document.getElementById('grade9Options').classList.add('hidden');
+            document.getElementById('container17').classList.remove('hidden');
+        });
+
+        document.getElementById('container18Button').addEventListener('click', function() {
+            document.getElementById('grade9Options').classList.add('hidden');
+            document.getElementById('container18').classList.remove('hidden');
+        });
+
+        document.getElementById('container19Button').addEventListener('click', function() {
+            document.getElementById('grade9Options').classList.add('hidden');
+            document.getElementById('container19').classList.remove('hidden');
+        });
+
+        document.getElementById('container20Button').addEventListener('click', function() {
+            document.getElementById('grade9Options').classList.add('hidden');
+            document.getElementById('container20').classList.remove('hidden');
+        });
+
+        // Navegación a contenedores desde las opciones de Grado 10º
+        document.getElementById('container21Button').addEventListener('click', function() {
+            document.getElementById('grade10Options').classList.add('hidden');
+            document.getElementById('container21').classList.remove('hidden');
+        });
+
+        document.getElementById('container22Button').addEventListener('click', function() {
+            document.getElementById('grade10Options').classList.add('hidden');
+            document.getElementById('container22').classList.remove('hidden');
+        });
+
+        document.getElementById('container23Button').addEventListener('click', function() {
+            document.getElementById('grade10Options').classList.add('hidden');
+            document.getElementById('container23').classList.remove('hidden');
+        });
+
+        document.getElementById('container24Button').addEventListener('click', function() {
+            document.getElementById('grade10Options').classList.add('hidden');
+            document.getElementById('container24').classList.remove('hidden');
+        });
+
+        document.getElementById('container25Button').addEventListener('click', function() {
+            document.getElementById('grade10Options').classList.add('hidden');
+            document.getElementById('container25').classList.remove('hidden');
+        });
+
+        // Navegación a contenedores desde las opciones de Grado 11º
+        document.getElementById('container26Button').addEventListener('click', function() {
+            document.getElementById('grade11Options').classList.add('hidden');
+            document.getElementById('container26').classList.remove('hidden');
+        });
+
+        document.getElementById('container27Button').addEventListener('click', function() {
+            document.getElementById('grade11Options').classList.add('hidden');
+            document.getElementById('container27').classList.remove('hidden');
+        });
+
+        document.getElementById('container28Button').addEventListener('click', function() {
+            document.getElementById('grade11Options').classList.add('hidden');
+            document.getElementById('container28').classList.remove('hidden');
+        });
+
+        document.getElementById('container29Button').addEventListener('click', function() {
+            document.getElementById('grade11Options').classList.add('hidden');
+            document.getElementById('container29').classList.remove('hidden');
+        });
+
+        document.getElementById('container30Button').addEventListener('click', function() {
+            document.getElementById('grade11Options').classList.add('hidden');
+            document.getElementById('container30').classList.remove('hidden');
+        });
+
+        // Navegación de regreso a las opciones de grado desde los contenedores
+        document.getElementById('backToGrade6OptionsFromContainer1').addEventListener('click', function() {
+            document.getElementById('container1').classList.add('hidden');
+            document.getElementById('grade6Options').classList.remove('hidden');
+        });
+
+        document.getElementById('backToGrade6OptionsFromContainer2').addEventListener('click', function() {
+            document.getElementById('container2').classList.add('hidden');
+            document.getElementById('grade6Options').classList.remove('hidden');
+        });
+
+        document.getElementById('backToGrade6OptionsFromContainer3').addEventListener('click', function() {
+            document.getElementById('container3').classList.add('hidden');
+            document.getElementById('grade6Options').classList.remove('hidden');
+        });
+
+        document.getElementById('backToGrade6OptionsFromContainer4').addEventListener('click', function() {
+            document.getElementById('container4').classList.add('hidden');
+            document.getElementById('grade6Options').classList.remove('hidden');
+        });
+
+        document.getElementById('backToGrade6OptionsFromContainer5').addEventListener('click', function() {
+            document.getElementById('container5').classList.add('hidden');
+            document.getElementById('grade6Options').classList.remove('hidden');
+        });
+
+        document.getElementById('backToGrade7OptionsFromContainer6').addEventListener('click', function() {
+            document.getElementById('container6').classList.add('hidden');
+            document.getElementById('grade7Options').classList.remove('hidden');
+        });
+
+        document.getElementById('backToGrade7OptionsFromContainer7').addEventListener('click', function() {
+            document.getElementById('container7').classList.add('hidden');
+            document.getElementById('grade7Options').classList.remove('hidden');
+        });
+
+        document.getElementById('backToGrade7OptionsFromContainer8').addEventListener('click', function() {
+            document.getElementById('container8').classList.add('hidden');
+            document.getElementById('grade7Options').classList.remove('hidden');
+        });
+
+        document.getElementById('backToGrade7OptionsFromContainer9').addEventListener('click', function() {
+            document.getElementById('container9').classList.add('hidden');
+            document.getElementById('grade7Options').classList.remove('hidden');
+        });
+
+        document.getElementById('backToGrade7OptionsFromContainer10').addEventListener('click', function() {
+            document.getElementById('container10').classList.add('hidden');
+            document.getElementById('grade7Options').classList.remove('hidden');
+        });
+
+        document.getElementById('backToGrade8OptionsFromContainer11').addEventListener('click', function() {
+            document.getElementById('container11').classList.add('hidden');
+            document.getElementById('grade8Options').classList.remove('hidden');
+        });
+
+        document.getElementById('backToGrade8OptionsFromContainer12').addEventListener('click', function() {
+            document.getElementById('container12').classList.add('hidden');
+            document.getElementById('grade8Options').classList.remove('hidden');
+        });
+
+        document.getElementById('backToGrade8OptionsFromContainer13').addEventListener('click', function() {
+            document.getElementById('container13').classList.add('hidden');
+            document.getElementById('grade8Options').classList.remove('hidden');
+        });
+
+        document.getElementById('backToGrade8OptionsFromContainer14').addEventListener('click', function() {
+            document.getElementById('container14').classList.add('hidden');
+            document.getElementById('grade8Options').classList.remove('hidden');
+        });
+
+        document.getElementById('backToGrade8OptionsFromContainer15').addEventListener('click', function() {
+            document.getElementById('container15').classList.add('hidden');
+            document.getElementById('grade8Options').classList.remove('hidden');
+        });
+
+        document.getElementById('backToGrade9OptionsFromContainer16').addEventListener('click', function() {
+            document.getElementById('container16').classList.add('hidden');
+            document.getElementById('grade9Options').classList.remove('hidden');
+        });
+
+        document.getElementById('backToGrade9OptionsFromContainer17').addEventListener('click', function() {
+            document.getElementById('container17').classList.add('hidden');
+            document.getElementById('grade9Options').classList.remove('hidden');
+        });
+
+        document.getElementById('backToGrade9OptionsFromContainer18').addEventListener('click', function() {
+            document.getElementById('container18').classList.add('hidden');
+            document.getElementById('grade9Options').classList.remove('hidden');
+        });
+
+        document.getElementById('backToGrade9OptionsFromContainer19').addEventListener('click', function() {
+            document.getElementById('container19').classList.add('hidden');
+            document.getElementById('grade9Options').classList.remove('hidden');
+        });
+
+        document.getElementById('backToGrade9OptionsFromContainer20').addEventListener('click', function() {
+            document.getElementById('container20').classList.add('hidden');
+            document.getElementById('grade9Options').classList.remove('hidden');
+        });
+
+        document.getElementById('backToGrade10OptionsFromContainer21').addEventListener('click', function() {
+            document.getElementById('container21').classList.add('hidden');
+            document.getElementById('grade10Options').classList.remove('hidden');
+        });
+
+        document.getElementById('backToGrade10OptionsFromContainer22').addEventListener('click', function() {
+            document.getElementById('container22').classList.add('hidden');
+            document.getElementById('grade10Options').classList.remove('hidden');
+        });
+
+        document.getElementById('backToGrade10OptionsFromContainer23').addEventListener('click', function() {
+            document.getElementById('container23').classList.add('hidden');
+            document.getElementById('grade10Options').classList.remove('hidden');
+        });
+
+        document.getElementById('backToGrade10OptionsFromContainer24').addEventListener('click', function() {
+            document.getElementById('container24').classList.add('hidden');
+            document.getElementById('grade10Options').classList.remove('hidden');
+        });
+
+        document.getElementById('backToGrade10OptionsFromContainer25').addEventListener('click', function() {
+            document.getElementById('container25').classList.add('hidden');
+            document.getElementById('grade10Options').classList.remove('hidden');
+        });
+
+        document.getElementById('backToGrade11OptionsFromContainer26').addEventListener('click', function() {
+            document.getElementById('container26').classList.add('hidden');
+            document.getElementById('grade11Options').classList.remove('hidden');
+        });
+
+        document.getElementById('backToGrade11OptionsFromContainer27').addEventListener('click', function() {
+            document.getElementById('container27').classList.add('hidden');
+            document.getElementById('grade11Options').classList.remove('hidden');
+        });
+
+        document.getElementById('backToGrade11OptionsFromContainer28').addEventListener('click', function() {
+            document.getElementById('container28').classList.add('hidden');
+            document.getElementById('grade11Options').classList.remove('hidden');
+        });
+
+        document.getElementById('backToGrade11OptionsFromContainer29').addEventListener('click', function() {
+            document.getElementById('container29').classList.add('hidden');
+            document.getElementById('grade11Options').classList.remove('hidden');
+        });
+
+        document.getElementById('backToGrade11OptionsFromContainer30').addEventListener('click', function() {
+            document.getElementById('container30').classList.add('hidden');
+            document.getElementById('grade11Options').classList.remove('hidden');
+        });
+    </script>
+</body>
+</html>
